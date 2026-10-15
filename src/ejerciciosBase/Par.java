@@ -15,6 +15,8 @@ public class Par {
 		} else {
 			System.out.print("El número " + num + " es impar");
 		}
+		
+		sc.close();
 	}
 
 }
