@@ -5,19 +5,11 @@ import java.util.Scanner;
 public class Circulo {
 	
 	public static double area(double r) {
-		double area = 0;
-		
-		area = Math.PI * Math.pow(r, 2);
-		
-		return area;
+		return Math.PI * Math.pow(r, 2);
 	}
 	
 	public static double longitud(double r) {
-		double longitud = 0;
-		
-		longitud = 2 * Math.PI * r;
-		
-		return longitud;
+		return 2 * Math.PI * r;
 	}
 
 	public static void main(String[] args) {
