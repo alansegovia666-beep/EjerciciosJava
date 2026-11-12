@@ -8,12 +8,22 @@ public class DNI {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("Dame un DNI: ");
-		int dni = sc.nextInt();
+		String dni = sc.nextLine().toUpperCase();
 		
-		if (dni >= 0 && dni <= 99999999) {
+		String numDni = dni.substring(0, dni.length()-1);
+		char letraIntroducida = dni.charAt(dni.length()-1);
+		
+		if (numDni.length() <= 8 && numDni.charAt(0) != '-') {
+			int num = Integer.parseInt(numDni);
 			String cadena = "TRWAGMYFPDXBNJZSQVHLCKE";
-			char letra = cadena.charAt(dni % 23);
-			System.out.print(letra);
+			char letraCalculada = cadena.charAt(num % 23);
+			if (letraCalculada == letraIntroducida) {
+				System.out.println("El DNI es correcto");
+			} else {
+				System.out.println("El DNI no es correcto");
+			}
+		} else {
+			System.out.println("El número del DNI no es válido");
 		}
 		
 		sc.close();
